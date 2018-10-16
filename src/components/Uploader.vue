@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     onFileChange: function(e) {
-      var files = e.target.files || e.dataTransfer.files;
+      let files = e.target.files || e.dataTransfer.files;
       if (!files.length) {
         return;
       }
@@ -49,7 +49,17 @@ export default {
 
       this.image_thum = this.loading_gif;
       this.image_url = ' アップロードしています...';
-      var data = new FormData();
+
+      let data = new FormData();
+      let content = {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json'
+        },
+        body: data,
+        mimeType: 'multipart/form-data'
+      };
+
       if (this.api.service == 'gyazo') {
         console.debug('gyazo');
         data.append('imagedata', files[0]);
@@ -57,18 +67,6 @@ export default {
       } else {
         console.debug('imgur');
         data.append('image', files[0]);
-      }
-
-      let content = {
-        method: 'POST',
-        headers: {
-          //Authorization: 'Client-ID ' + apiKey,
-          Accept: 'application/json'
-        },
-        body: data,
-        mimeType: 'multipart/form-data'
-      };
-      if (this.api.service == 'imgur') {
         content.headers.Authorization = 'Client-ID ' + apiKey;
       }
 
