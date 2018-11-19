@@ -1,4 +1,6 @@
 # gyazo-imgur
+Qiita article
+https://qiita.com/ErgoFriend/items/acb61dda0121acbed531
 
 ```
 yarn install
