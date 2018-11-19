@@ -5,6 +5,9 @@
       View source code on
       <a href="https://github.com/ErgoFriend/gyazo-imgur" target="_blank" rel="noopener">GitHub</a>.
     </p>
+    <p> Qiita article
+      <a href="https://qiita.com/ErgoFriend/items/acb61dda0121acbed531" target="_blank" rel="noopener">https://qiita.com/ErgoFriend/items/acb61dda0121acbed531</a>
+     </p>
   </div>
 </template>
 
